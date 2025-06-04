@@ -10,19 +10,44 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+  // Add index to navbar bottom
+  // List is iterated using index
+  final appScreens = [
+    const Center(child: Text("Home")), // Widget
+    const Center(child: Text("Search")),
+    const Center(child: Text("Ticket")),
+    const Center(child: Text("Profile")),
+  ];
+
+  // Change index for bottom navbar
+  int _selectedIndex = 0;
+
+  // Method to loop through indexes
+  void _onItemTapped(int i) {
+    setState(() { // ko set state thì mỗi lần chọn index dưới navbar bottom phải reload lại
+      _selectedIndex = i;
+    });
+
+    _selectedIndex = i;
+    print("Tapped index is $_selectedIndex");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("My tickets")),
-      body: Center(child: Text("Ticket info")),
+      body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex, // Nói cho biết là đang chọn cái nào để bold lên khi đc clicked
+        onTap: _onItemTapped, // onClick
         selectedItemColor: Colors.blueGrey,
         unselectedItemColor: const Color(0xFF526400),
         showSelectedLabels: false,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(FluentSystemIcons.ic_fluent_home_add_regular),
-            activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled), // if is selected, then filled
+            activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
+            // if is selected, then filled
             label: "Home",
           ),
 
