@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/bottom_nav_bar.dart';
 
 void main() {
-  var myList = [
-    "Flutter",
-    "Java",
-    "Kotlin"
-  ];
+  var myList = ["Flutter", "Java", "Kotlin"];
 
   runApp(const MyApp());
 }
@@ -17,11 +13,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( // Give ur app a life
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
-      ),
+    return MaterialApp(
+      // Give ur app a life
+      debugShowCheckedModeBanner: false,
       home: BottomNavBar(),
     );
   }

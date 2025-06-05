@@ -1,6 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/screens/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -13,8 +13,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   // Add index to navbar bottom
   // List is iterated using index
   final appScreens = [
-    const Center(child: Text("Home")), // Widget
-    const Center(child: Text("Search")),
+    const HomeScreen(), // import home_screen
+    const Center(child: Text("Search")), // Widget
     const Center(child: Text("Ticket")),
     const Center(child: Text("Profile")),
   ];
@@ -24,7 +24,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   // Method to loop through indexes
   void _onItemTapped(int i) {
-    setState(() { // ko set state thì mỗi lần chọn index dưới navbar bottom phải reload lại
+    setState(() {
+      // ko set state thì mỗi lần chọn index dưới navbar bottom phải reload lại
       _selectedIndex = i;
     });
 
@@ -35,11 +36,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("My tickets")),
+      // appBar: AppBar(title: const Text("My tickets")),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex, // Nói cho biết là đang chọn cái nào để bold lên khi đc clicked
-        onTap: _onItemTapped, // onClick
+        currentIndex: _selectedIndex,
+        // Nói cho biết là đang chọn cái nào để bold lên khi đc clicked
+        onTap: _onItemTapped,
+        // onClick
         selectedItemColor: Colors.blueGrey,
         unselectedItemColor: const Color(0xFF526400),
         showSelectedLabels: false,
