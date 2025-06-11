@@ -35,7 +35,7 @@ class TicketView extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "NYC",
+                        "LONG AN",
                         style: AppStyles.headLineStyle3.copyWith(
                           color: Colors.white,
                         ),
