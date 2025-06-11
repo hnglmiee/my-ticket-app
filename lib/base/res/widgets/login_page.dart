@@ -27,16 +27,26 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(height: 20),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10),
+
+                // Container(
+                //   width: MediaQuery.of(context).size.width,
+                //   height: 50,
+                //   decoration: BoxDecoration(
+                //     border: Border.all(width: 2, color: Colors.grey),
+                //     borderRadius: BorderRadius.circular(10),
+                //   ),
+                //   alignment: Alignment.centerLeft,
+                //   padding: EdgeInsets.only(left: 10),
+                //   child: SizedBox(child: Text("+84")),
+                // ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: '+84',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 10),
-                  child: SizedBox(child: Text("+84")),
+                  keyboardType: TextInputType.phone,
                 ),
                 // SizedBox(height: 20),
                 // Text(
@@ -65,12 +75,20 @@ class LoginPage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   height: 50,
                   child: Center(
-                    child: Text(
-                      "Get OTP",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        padding: EdgeInsets.all(8),
+                      ),
+                      child: Text(
+                        "Get OTP",
+                        style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),
