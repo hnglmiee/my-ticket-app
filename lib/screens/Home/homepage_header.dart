@@ -10,7 +10,7 @@ class HomepageHeader extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       height: 70,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Avatar
           Container(
@@ -21,6 +21,7 @@ class HomepageHeader extends StatelessWidget {
               shape: BoxShape.circle,
             ),
           ),
+          SizedBox(width: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -30,25 +31,8 @@ class HomepageHeader extends StatelessWidget {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               Text(
-                "Vietnam",
+                "Free",
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
-              ),
-            ],
-          ),
-
-          // Nút thông báo và chat
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.notifications_none_rounded, size: 35),
-                onPressed: () {},
-              ),
-              SizedBox(width: 10),
-              IconButton(
-                icon: Icon(Icons.chat_bubble_outline_outlined, size: 35),
-                onPressed: () {},
-                padding: EdgeInsets.zero,
-                constraints: BoxConstraints(minWidth: 30, minHeight: 30),
               ),
             ],
           ),

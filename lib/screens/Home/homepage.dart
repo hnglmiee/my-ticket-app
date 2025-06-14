@@ -1,12 +1,15 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/res/widgets/Search_navbar.dart';
+import 'package:ticket_app/screens/Home/Search_navbar.dart';
 import 'package:ticket_app/base/res/widgets/function_button_list_profile_page.dart';
-import 'package:ticket_app/base/res/widgets/homepage_category_header.dart';
-import 'package:ticket_app/base/res/widgets/homepage_header.dart';
-import 'package:ticket_app/base/res/widgets/profile_page_avatar.dart';
-import 'package:ticket_app/base/res/widgets/profile_page_header.dart';
-import 'package:ticket_app/base/res/widgets/service_homepage.dart';
+import 'package:ticket_app/screens/Home/homepage_category_header.dart';
+import 'package:ticket_app/screens/Home/homepage_header.dart';
+import 'package:ticket_app/screens/Profile/profile_page_avatar.dart';
+import 'package:ticket_app/screens/Profile/profile_page_header.dart';
+import 'package:ticket_app/screens/Explore/search_page_category.dart';
+import 'package:ticket_app/screens/Explore/search_page_explore.dart';
+import 'package:ticket_app/screens/Explore/search_page_header.dart';
+import 'package:ticket_app/screens/Home/service_homepage.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -31,8 +34,16 @@ class _HomepageState extends State<Homepage> {
       ),
     ),
     // Trang Explore
-    Center(child: Text('Explore Page', style: TextStyle(fontSize: 24))),
-    // Trang Profile
+    SingleChildScrollView(
+      child: Column(
+        children: [
+          SearchPageHeader(),
+          SearchNavbar(),
+          SearchPageCategory(),
+          SearchPageExplore(),
+        ],
+      ),
+    ), // Trang Profile
     SingleChildScrollView(
       child: Column(
         children: [

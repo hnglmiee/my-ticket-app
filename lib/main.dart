@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/bottom_nav_bar.dart';
-import 'package:ticket_app/base/res/widgets/login_page.dart';
+import 'package:ticket_app/screens/Login/login_page.dart';
 
 void main() {
   runApp(const MyApp());

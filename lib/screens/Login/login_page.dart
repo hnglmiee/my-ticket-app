@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/bottom_nav_bar.dart';
-import 'package:ticket_app/base/res/widgets/homepage.dart';
-import 'package:ticket_app/base/res/widgets/homepage_header.dart';
+// import 'package:ticket_app/base/bottom_nav_bar.dart';
+import 'package:ticket_app/screens/Home/homepage.dart';
+import 'package:ticket_app/screens/Home/homepage_header.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

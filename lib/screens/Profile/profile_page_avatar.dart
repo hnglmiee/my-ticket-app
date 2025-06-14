@@ -20,7 +20,7 @@ class ProfilePageAvatar extends StatelessWidget {
         ),
         SizedBox(height: 20),
         Text(
-          "Nguyen Van Coc",
+          "Nguyen Van A",
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
@@ -29,9 +29,9 @@ class ProfilePageAvatar extends StatelessWidget {
         ),
         SizedBox(height: 5),
         Text(
-          "Nguyen Van Coc",
+          "nguyenvana@gmail.com",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 15,
             fontWeight: FontWeight.w500,
             color: Colors.black87,
           ),
