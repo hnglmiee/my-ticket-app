@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/bottom_nav_bar.dart';
+import 'package:ticket_app/base/res/widgets/homepage.dart';
+import 'package:ticket_app/base/res/widgets/homepage_header.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -27,18 +30,6 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(height: 20),
-
-                // Container(
-                //   width: MediaQuery.of(context).size.width,
-                //   height: 50,
-                //   decoration: BoxDecoration(
-                //     border: Border.all(width: 2, color: Colors.grey),
-                //     borderRadius: BorderRadius.circular(10),
-                //   ),
-                //   alignment: Alignment.centerLeft,
-                //   padding: EdgeInsets.only(left: 10),
-                //   child: SizedBox(child: Text("+84")),
-                // ),
                 TextFormField(
                   decoration: InputDecoration(
                     labelText: '+84',
@@ -48,22 +39,6 @@ class LoginPage extends StatelessWidget {
                   ),
                   keyboardType: TextInputType.phone,
                 ),
-                // SizedBox(height: 20),
-                // Text(
-                //   "Enter your password",
-                //   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                // ),
-                // SizedBox(height: 20),
-                // Container(
-                //   width: MediaQuery.of(context).size.width,
-                //   height: 50,
-                //   decoration: BoxDecoration(
-                //     border: Border.all(width: 2, color: Colors.grey),
-                //     borderRadius: BorderRadius.circular(10),
-                //   ),
-                //   alignment: Alignment.centerLeft,
-                //   padding: EdgeInsets.only(left: 10),
-                //   child: SizedBox(child: Text("Password")),
                 // ),
                 SizedBox(height: 30),
                 Container(
@@ -76,7 +51,12 @@ class LoginPage extends StatelessWidget {
                   height: 50,
                   child: Center(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Homepage()),
+                        );
+                      },
                       style: TextButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
