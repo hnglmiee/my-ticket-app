@@ -1,8 +1,11 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/widgets/Search_navbar.dart';
+import 'package:ticket_app/base/res/widgets/function_button_list_profile_page.dart';
 import 'package:ticket_app/base/res/widgets/homepage_category_header.dart';
 import 'package:ticket_app/base/res/widgets/homepage_header.dart';
+import 'package:ticket_app/base/res/widgets/profile_page_avatar.dart';
+import 'package:ticket_app/base/res/widgets/profile_page_header.dart';
 import 'package:ticket_app/base/res/widgets/service_homepage.dart';
 
 class Homepage extends StatefulWidget {
@@ -16,6 +19,7 @@ class _HomepageState extends State<Homepage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
+    // Trang Home
     SingleChildScrollView(
       child: Column(
         children: [
@@ -23,6 +27,18 @@ class _HomepageState extends State<Homepage> {
           SearchNavbar(),
           HomepageCategoryHeader(),
           ServiceHomepage(),
+        ],
+      ),
+    ),
+    // Trang Explore
+    Center(child: Text('Explore Page', style: TextStyle(fontSize: 24))),
+    // Trang Profile
+    SingleChildScrollView(
+      child: Column(
+        children: [
+          ProfilePageHeader(),
+          ProfilePageAvatar(),
+          FunctionButtonListProfilePage(),
         ],
       ),
     ),
