@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      // backgroundColor: Color(0xFFFFFFFF),
       body: Center(
         child: Container(
           // color: Colors.amber,
@@ -43,8 +43,8 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 30),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.black,
-                    border: Border.all(width: 2, color: Colors.black),
+                    color: Colors.white,
+                    border: Border.all(width: 2, color: Colors.white),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   width: MediaQuery.of(context).size.width,
@@ -65,10 +65,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       child: Text(
                         "Get OTP",
-                        style: TextStyle(
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 16,
-                        ),
+                        style: TextStyle(color: Colors.black, fontSize: 16),
                       ),
                     ),
                   ),
@@ -104,7 +101,7 @@ class LoginPage extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(
-                        backgroundColor: Color.fromARGB(134, 255, 255, 255),
+                        backgroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -119,7 +116,7 @@ class LoginPage extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(
-                        backgroundColor: Color.fromARGB(134, 255, 255, 255),
+                        backgroundColor: Colors.black12,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -141,7 +138,7 @@ class LoginPage extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(
-                        backgroundColor: Color.fromARGB(134, 255, 255, 255),
+                        backgroundColor: Colors.black12,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),

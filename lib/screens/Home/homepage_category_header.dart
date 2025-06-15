@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/dummy_data/category_data.dart';
+import 'package:ticket_app/base/res/widgets/category_card.dart';
 
 class HomepageCategoryHeader extends StatelessWidget {
   const HomepageCategoryHeader({super.key});
@@ -7,30 +9,32 @@ class HomepageCategoryHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // Banner image
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.network(
-              'https://cdn.dribbble.com/userupload/27088248/file/original-a652e2d4c08165a974e3b83b5806f79b.jpg?resize=400x0',
+              'https://www.adobomagazine.com/wp-content/uploads/2025/02/Taylor-Swift-A-Spotify-Playlist-Experience-hero.jpg',
               fit: BoxFit.cover,
               height: 250,
               width: double.infinity,
             ),
           ),
         ),
+        // Header row
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Categories",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "See all",
                   style: TextStyle(
                     fontSize: 20,
@@ -42,117 +46,27 @@ class HomepageCategoryHeader extends StatelessWidget {
             ],
           ),
         ),
+        // Horizontal scrollable category list
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        shape: BoxShape.circle,
+              children:
+                  categories.map((item) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: CategoryCard(
+                        title: item.title,
+                        imgUrl: item.imgUrl,
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('${item.title} tapped')),
+                          );
+                        },
                       ),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "Dogs",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "Cats",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "Birds",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "Fishes",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 20),
-                Column(
-                  children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "Monkeys",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                    );
+                  }).toList(),
             ),
           ),
         ),
